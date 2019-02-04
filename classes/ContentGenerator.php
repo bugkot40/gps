@@ -35,10 +35,9 @@ class ContentGenerator
             ])->one();
 
             $question->use = 1;
-
             $question->save();
-            debug($question->use);
-            //return $question;
+
+            return $question;
         }
 
         return false;

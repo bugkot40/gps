@@ -63,7 +63,7 @@ class m190204_184202_init_migration extends Migration
             'question' => $this->text(),
             'answer' => $this->text(),
             'image' => $this->string(),
-            'use' => $this->boolean()->defaultValue(false)
+            'use' => $this->boolean()->defaultValue(0)
         ]);
 
     }
