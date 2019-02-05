@@ -13,6 +13,7 @@ class m190204_193847_pot extends Migration
      */
     public function safeUp()
     {
+        $nameTest = 'Правила по охране труда при эксплуатации электроустановок';
 
         $testQuestions = [
             [
@@ -43,9 +44,8 @@ class m190204_193847_pot extends Migration
                 'рис4'
             ],
         ];
-        $nameTest = 'Правила по охране труда при эксплуатации электроустановок';
-        $testId = Test::find()->where(['name'=> $nameTest])->asArray()->one();
-
+        $test = Test::find()->where(['name'=> $nameTest])->one();
+        $testId = $test->id;
 
         foreach($testQuestions as $testQuestion){
             $n = 0;

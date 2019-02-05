@@ -1,6 +1,7 @@
 <?php
 
 namespace app\classes;
+
 use app\models\Ps;
 use app\models\Test;
 use app\models\Question;
@@ -24,31 +25,52 @@ class ContentGenerator
     public static function getSelectQuestion($testId = 1)
     {
         $questions = Question::find()->where([
-            'use' => false,
+            'use' => 0,
             'test_id' => $testId
         ])->asArray()->all();
 
-        if($questions){
-            shuffle($questions);
-            $question = Question::find()->where([
-                'id' => $questions[0]['id'],
-            ])->one();
-
-            $question->use = 1;
-            $question->save();
-
-            return $question;
+        if ($questions) {
+            return self::shuffle($questions);
         }
 
         return false;
 
     }
-	
-	public static function getMixSelectQuestion($mixId = 1){
-		$
-	}
-	
-	
-	
+
+    public static function getMixSelectQuestion($mixId = 1)
+    {
+        $mix = false;
+        $tests = Test::find()->where([
+            'mix_id' => $mixId,
+        ])->with('questions')->asArray()->all();
+        foreach ($tests as $test) {
+            foreach ($test['questions'] as $question) {
+                    if($question['use'] == 0){
+                        $mix[] = $question;
+                    }
+                    else break;
+            };
+        }
+        if ($mix) {
+            debug($mix);
+            $q = self::shuffle($mix);
+            debug($q);
+        }
+
+    }
+
+    private static function shuffle($array)
+    {
+        shuffle($array);
+        $question = Question::find()->where([
+            'id' => $array[0]['id'],
+        ])->one();
+
+        $question->use = 1;
+        $question->save();
+
+        return $question;
+    }
+
 
 }
