@@ -43,5 +43,12 @@ class ContentGenerator
         return false;
 
     }
+	
+	public static function getMixSelectQuestion($mixId = 1){
+		$
+	}
+	
+	
+	
 
 }

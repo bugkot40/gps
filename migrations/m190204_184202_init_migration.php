@@ -42,17 +42,9 @@ class m190204_184202_init_migration extends Migration
         ]);
 
 
-        /**
-         *	db тестов
-         */
-        $this->createTable('mix',[
-            'id' => $this->primaryKey(),
-            'name' => $this->string()->unique()
-        ]);
-
         $this->createTable('test', [
             'id' => $this->primaryKey(),
-            'mix_id' => $this->integer(),
+            'mix_id' => $this->string(),
             'name' => $this->string()->unique()
         ]);
 
@@ -74,8 +66,7 @@ class m190204_184202_init_migration extends Migration
     public function safeDown()
     {
         $this->dropTable('question');
-        $this->dropTable('test');
-        $this->dropTable('mix');
+        $this->dropTable('test');        
 
         $this->dropTable('scheme');
         $this->dropTable('instruction');

@@ -19,13 +19,10 @@ class m190204_184336_init_migration extends Migration
 
         $this->addForeignKey('question-test_id-fk', 'question', 'test_id', 'test', 'id', 'CASCADE', 'CASCADE');
 
-        $this->addForeignKey('test-mix_id-fk', 'test', 'mix_id', 'mix', 'id', 'SET NULL', 'CASCADE');
-
     }
 
     public function safeDown()
     {
-        $this->dropForeignKey('test-mix_id-fk', 'test');
         $this->dropForeignKey('question-test_id-fk', 'question');
         $this->dropForeignKey('scheme-connection_id-fk', 'scheme');
         $this->dropForeignKey('instruction-connection_id-fk', 'instruction');
