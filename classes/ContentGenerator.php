@@ -45,14 +45,12 @@ class ContentGenerator
         ])->with('questions')->asArray()->all();
         foreach ($tests as $test) {
             foreach ($test['questions'] as $question) {
-                    if($question['use'] == 0){
-                        $mix[] = $question;
-                    }
-                    else break;
+               if ($question['use'] == 0) {
+                    $mix[] = $question;
+                } else break;
             };
         }
         if ($mix) {
-            debug($mix);
             $q = self::shuffle($mix);
             debug($q);
         }
@@ -62,6 +60,8 @@ class ContentGenerator
     private static function shuffle($array)
     {
         shuffle($array);
+        debug($array);
+
         $question = Question::find()->where([
             'id' => $array[0]['id'],
         ])->one();
