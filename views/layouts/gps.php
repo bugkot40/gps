@@ -44,6 +44,10 @@ echo Nav::widget([
                 'label' => 'Микс', 'url' => ['/gps/mix',],
 
         ],
+        [
+                'label' => 'Обнулить', 'url' => ['/gps/null',],
+
+        ],
     ],
 ]);
 NavBar::end();

@@ -30,10 +30,10 @@ class ContentGenerator
         ])->asArray()->all();
 
         if ($questions) {
-            return self::shuffle($questions);
+            $selectQuestion = self::shuffle($questions);
+            debug($selectQuestion);
         }
-
-        return false;
+        else debug('вопросы закончились');
 
     }
 
@@ -60,7 +60,6 @@ class ContentGenerator
     private static function shuffle($array)
     {
         shuffle($array);
-        debug($array);
 
         $question = Question::find()->where([
             'id' => $array[0]['id'],
