@@ -13,9 +13,17 @@ class GpsController extends Controller
 
     public function actionIndex()
     {
-        ContentGenerator::getMixSelectQuestion(1);
-
         return $this->render('index');
+    }
+
+    public function actionTest()
+    {
+        ContentGenerator::getSelectQuestion(1);
+    }
+
+    public function actionMix()
+    {
+        ContentGenerator::getMixSelectQuestion(1);
     }
 
 

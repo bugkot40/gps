@@ -6,6 +6,8 @@
 use yii\helpers\Html;
 use app\assets\AppAssetGps;
 use app\assets\ltAppAsset;
+use yii\bootstrap\NavBar;
+use yii\bootstrap\Nav;
 
 AppAssetGps::register($this);
 ltAppAsset::register($this);
@@ -23,6 +25,30 @@ ltAppAsset::register($this);
 </head>
 <body>
 <?php $this->beginBody() ?>
+
+<?php
+NavBar::begin([
+    'brandLabel' => '',
+    'brandUrl' => Yii::$app->homeUrl,
+    'options' => [
+        'class' => 'navbar-inverse navbar-fixed-top',
+    ],
+]);
+echo Nav::widget([
+    'options' => ['class' => 'navbar-nav navbar-right'],
+    'items' => [
+        [
+                'label' => 'Тест', 'url' => ['/gps/test'],
+        ],
+        [
+                'label' => 'Микс', 'url' => ['/gps/mix',],
+
+        ],
+    ],
+]);
+NavBar::end();
+?>
+
 
 <div class="wrap">
     <div class="container">
