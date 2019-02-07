@@ -43,16 +43,19 @@ class ContentGenerator
         $tests = Test::find()->where([
             'mix_id' => $mixId,
         ])->with('questions')->asArray()->all();
+
+
         foreach ($tests as $test) {
             foreach ($test['questions'] as $question) {
                if ($question['use'] == 0) {
                     $mix[] = $question;
-                } else break;
+                } else continue;
             };
         }
         if ($mix) {
+            debug($mix);
             $q = self::shuffle($mix);
-            debug($q);
+            //debug($q);
         }
 
     }
