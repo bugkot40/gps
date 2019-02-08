@@ -22,7 +22,18 @@ class ContentGenerator
         debug($menu);
     }
 
-    public static function getSelectQuestion($testId = 1)
+    public static function testStart()
+    {
+        $questions = Question::find()->where(['use'=> 1])->all();
+
+        foreach($questions as $question){
+            $question->use = 0;
+            $question->save();
+        }
+
+    }
+
+    public static function getSelectQuestion($testId)
     {
         $questions = Question::find()->where([
             'use' => 0,
@@ -31,32 +42,30 @@ class ContentGenerator
 
         if ($questions) {
             $selectQuestion = self::shuffle($questions);
-            debug($selectQuestion);
-        }
-        else debug('вопросы закончились');
+            return $selectQuestion;
+        } else return false;
 
     }
 
-    public static function getMixSelectQuestion($mixId = 1)
+    public static function getMixSelectQuestion($mixId)
     {
         $mix = false;
         $tests = Test::find()->where([
             'mix_id' => $mixId,
         ])->with('questions')->asArray()->all();
 
-
         foreach ($tests as $test) {
-            foreach ($test['questions'] as $question) {
-               if ($question['use'] == 0) {
-                    $mix[] = $question;
-                } else continue;
-            };
+            if($test['questions']){
+                foreach ($test['questions'] as $question) {
+                   if ($question['use'] == 0) {
+                        $mix[] = $question;
+                    }
+                };
+            }
         }
         if ($mix) {
-            debug($mix);
-            $q = self::shuffle($mix);
-            //debug($q);
-        }
+           return self::shuffle($mix);
+        } else false;
 
     }
 

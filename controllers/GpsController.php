@@ -16,25 +16,32 @@ class GpsController extends Controller
     {
         return $this->render('index');
     }
-    public function actionNull()
-    {
-        $questions = Question::find()->where(['use'=> 1])->all();
 
-        foreach($questions as $question){
-            $question->use = 0;
-            $question->save();
-        }
 
-    }
 
     public function actionTest()
     {
-        ContentGenerator::getSelectQuestion(1);
+        ContentGenerator::testStart();
+        $question = ContentGenerator::getSelectQuestion(1);
+        if ($question) debug($question); 
+    }
+
+    public function actionTestNext()
+    {
+        $question = ContentGenerator::getSelectQuestion(1);
+        if ($question) debug($question);
     }
 
     public function actionMix()
     {
-        ContentGenerator::getMixSelectQuestion(1);
+        ContentGenerator::testStart();
+        $question = ContentGenerator::getMixSelectQuestion(1);
+        if ($question) debug($question); 
+    }
+
+    public function actionMixNext()
+    {
+
     }
 
 
