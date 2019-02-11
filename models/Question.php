@@ -35,7 +35,8 @@ class Question extends \yii\db\ActiveRecord
         return [
             [['test_id', 'use'], 'integer'],
             [['question', 'answer'], 'string'],
-            [['link', 'image'], 'string', 'max' => 255],
+            [['link'], 'string', 'max' => 255],
+            [['image'], 'file'],
             [['test_id'], 'exist', 'skipOnError' => true, 'targetClass' => Test::className(), 'targetAttribute' => ['test_id' => 'id']],
         ];
     }
@@ -48,10 +49,10 @@ class Question extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'test_id' => 'Test ID',
-            'link' => 'Link',
-            'question' => 'Question',
-            'answer' => 'Answer',
-            'image' => 'Image',
+            'link' => 'Ссылка',
+            'question' => 'Вопрос',
+            'answer' => 'Ответ',
+            'image' => 'Рисунок',
             'use' => 'Use',
         ];
     }
