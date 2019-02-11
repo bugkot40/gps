@@ -7,7 +7,7 @@ use yii\helpers\Url;
 
 <?php if ($question): ?>
     <?php $test = $question->test; ?>
-    <a class="js_menu" href="<?= Url::toRoute(['test/mix-next', 'mixId' => $test->mix_id]) ?>"
+    <a class="js_test" href="<?= Url::toRoute(['test/mix-next', 'mixId' => $test->mix_id]) ?>"
        data-url='test/mix-next' data-id="<?= $test->mix_id ?>">
         Продолжить
     </a>

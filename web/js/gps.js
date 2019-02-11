@@ -1,6 +1,6 @@
 $("document").ready(function () {
 
-    $('.js_start').on('click', 'a.js_menu', function () {
+    $('.js_start').on('click', 'a.js_test', function () {
         var id = $(this).data('id');
         var url = '?r=' + $(this).data('url');
         $.ajax({

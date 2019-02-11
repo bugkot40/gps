@@ -4,12 +4,14 @@
 namespace app\controllers;
 
 
+use app\classes\AdminDb;
 use app\models\Question;
 use yii\web\Controller;
 use app\classes\ContentGenerator;
 
 class TestController extends Controller
 {
+    public $layout = 'test';
 
     public function actionIndex()
     {
@@ -96,5 +98,20 @@ class TestController extends Controller
         ]);
     }
 
+    public function actionQuestionAdd($testId)
+    {
+        $this->layout = 'test-add';
 
+        $newQuestion = new Question();
+
+
+        if ($newQuestion->load(\Yii::$app->request->post()) && $newQuestion->validate()) {
+            AdminDb::questionSave($newQuestion, $testId);
+        }
+
+        return $this->render('question-add', [
+            'testId' => $testId,
+            'newQuestion' => $newQuestion,
+        ]);
+    }
 }

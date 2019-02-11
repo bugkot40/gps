@@ -28,52 +28,43 @@ ltAppAsset::register($this);
 <?php $this->beginBody() ?>
 <?php $menu = \app\classes\ContentGenerator::getMenu(); ?>
 
-<?php $substations = $menu['ps']; ?>
+<?php $pss = $menu['ps']; ?>
 <?php $tests = $menu['test']; ?>
 
-
 <div class="wrap">
-    <ul>
-        <?php foreach ($substations as $substation): ?>
-            <li class="">
-                <a class="js_menu" href="<?= Url::toRoute(['gps/index', 'testId' => $substation['id']]) ?>"
-                   data-id="<?= $substation['id'] ?>">
-                    <?= $substation['name'] ?>
-                </a>
-            </li>
-        <?php endforeach; ?>
-    </ul>
+
     <ul>
         <?php foreach ($tests as $test): ?>
             <li class="js_start">
-                <a class="js_menu" href="<?= Url::toRoute(['test/procedure', 'testId' => $test['id']]) ?>"
+                <a class="js_test" href="<?= Url::toRoute(['test/procedure', 'testId' => $test['id']]) ?>"
                    data-url='test/procedure' data-id="<?= $test['id'] ?>">
                     <?= $test['name'] ?>
                 </a>
 
-                <a class="js_menu" href="<?= Url::toRoute(['test/test', 'testId' => $test['id']]) ?>"
+                <a class="js_test" href="<?= Url::toRoute(['test/test', 'testId' => $test['id']]) ?>"
                    data-url='test/test' data-id="<?= $test['id'] ?>">
                     <?= 'Перемешать' ?>
                 </a>
 
-                <a class="menu" href="<?= Url::toRoute(['admin/question-add', 'testId' => $test['id']]) ?>">
+                <a class="menu" href="<?= Url::toRoute(['test/question-add', 'testId' => $test['id']]) ?>">
                     <?= 'Добавить' ?>
                 </a>
             </li>
         <?php endforeach; ?>
         <li class="js_start">
-            <a class="js_menu" href="<?= Url::toRoute(['test/mix', 'mixId' => 1]) ?>"
+            <a class="js_test" href="<?= Url::toRoute(['test/mix', 'mixId' => 1]) ?>"
                data-url='test/mix' data-id="<?= 1 ?>">
                 <?= 'Микс НТД' ?>
             </a>
         </li>
         <li class="js_start">
-            <a class="js_menu" href="<?= Url::toRoute(['test/mix', 'mixId' => 2]) ?>"
+            <a class="js_test" href="<?= Url::toRoute(['test/mix', 'mixId' => 2]) ?>"
                data-url='test/mix' data-id="<?= 2 ?>">
                 <?= 'Микс РЗА' ?>
             </a>
         </li>
     </ul>
+    <a class="" href="<?= \yii\helpers\Url::toRoute(['gps/index']) ?>">Перейти в раздел ГПС-370</a>
 
     <div class="container">
         <?= $content ?>
