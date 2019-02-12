@@ -31,9 +31,24 @@ ltAppAsset::register($this);
 <?php $pss = $menu['ps']; ?>
 <?php $tests = $menu['test']; ?>
 
-<div class="wrap">
+<div class="dropdown">
+  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Выпадающая ссылка
+  </a>
 
-    <ul>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+	  <ul>
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+	  </ul>
+  </div>
+</div>
+	
+    
+
+<div class="wrap">
+	 <ul>
         <?php foreach ($tests as $test): ?>
             <li class="js_start">
                 <a class="js_test" href="<?= Url::toRoute(['test/procedure', 'testId' => $test['id']]) ?>"
