@@ -32,28 +32,28 @@ ltAppAsset::register($this);
 <?php $tests = $menu['test']; ?>
 
 <div class="dropdown">
-  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Выпадающая ссылка
-  </a>
+    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+       aria-haspopup="true" aria-expanded="false">
+        Выпадающая ссылка
+    </a>
 
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-	  <ul>
-    <a class="dropdown-item" href="#">Action</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
-	  </ul>
-  </div>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <ul>
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+        </ul>
+    </div>
 </div>
 
 
-
 <div class="wrap">
-	 <ul>
+    <ul>
         <?php foreach ($tests as $test): ?>
             <li class="js_start">
                 <a class="js_test" href="<?= Url::toRoute(['test/procedure', 'testId' => $test['id']]) ?>"
                    data-url='test/procedure' data-id="<?= $test['id'] ?>">
-                    <?= $test['name'] ?>
+                    <?= $test['label'] ?>
                 </a>
 
                 <a class="js_test" href="<?= Url::toRoute(['test/test', 'testId' => $test['id']]) ?>"

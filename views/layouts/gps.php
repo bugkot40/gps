@@ -37,7 +37,7 @@ ltAppAsset::register($this);
             <li class="">
                 <a class="js_gps" href="<?= Url::toRoute(['gps/gps', 'psId' => $ps['id']]) ?>"
                    data-id="<?= $ps['id'] ?>">
-                    <?= $ps['name'] ?>
+                    <?= $ps['label'] ?>
                 </a>
             </li>
         <?php endforeach; ?>
