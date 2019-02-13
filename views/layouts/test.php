@@ -31,22 +31,6 @@ ltAppAsset::register($this);
 <?php $pss = $menu['ps']; ?>
 <?php $tests = $menu['test']; ?>
 
-<div class="dropdown">
-    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
-       aria-haspopup="true" aria-expanded="false">
-        Выпадающая ссылка
-    </a>
-
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-        <ul>
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-        </ul>
-    </div>
-</div>
-
-
 <div class="wrap">
     <ul>
         <?php foreach ($tests as $test): ?>
@@ -58,11 +42,11 @@ ltAppAsset::register($this);
 
                 <a class="js_test" href="<?= Url::toRoute(['test/test', 'testId' => $test['id']]) ?>"
                    data-url='test/test' data-id="<?= $test['id'] ?>">
-                    <?= 'Перемешать' ?>
+                    <?= Html::img("@web/images/mix.png", ['alt' => 'mix', 'width' => '20px']) ?>
                 </a>
 
                 <a class="menu" href="<?= Url::toRoute(['test/question-add', 'testId' => $test['id']]) ?>">
-                    <?= 'Добавить' ?>
+                    <?= Html::img("@web/images/add.png", ['alt' => '+', 'width' => '20px']) ?>
                 </a>
             </li>
         <?php endforeach; ?>
@@ -79,7 +63,7 @@ ltAppAsset::register($this);
             </a>
         </li>
     </ul>
-    <a class="" href="<?= \yii\helpers\Url::toRoute(['gps/index']) ?>">Перейти в раздел ГПС-370</a>
+    <a class="get" href="<?= \yii\helpers\Url::toRoute(['gps/index']) ?>">Перейти в раздел ГПС-370</a>
 
     <div class="container">
         <?= $content ?>

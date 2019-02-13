@@ -18,8 +18,8 @@ class m190204_184202_init_migration extends Migration
          */
         $this->createTable('ps',[
             'id' => $this->primaryKey(),
-            'name' => $this->string()->unique(),
-            'label' => $this->string()->unique()
+            'name' => $this->string(),
+            'label' => $this->string()
         ]);
 
         $this->createTable('connection',[
@@ -46,8 +46,8 @@ class m190204_184202_init_migration extends Migration
         $this->createTable('test', [
             'id' => $this->primaryKey(),
             'mix_id' => $this->string(),
-            'name' => $this->string()->unique(),
-            'label' => $this->string()->unique()
+            'name' => $this->string(),
+            'label' => $this->string()
         ]);
 
         $this->createTable('question', [
