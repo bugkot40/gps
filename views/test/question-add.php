@@ -4,13 +4,13 @@ use yii\widgets\ActiveForm;
 use yii\helpers\Url;
 
 ?>
-
+    <h1>Добавить вопрос <?= $test->label ?></h1>
 <?php $questionAdd = ActiveForm::begin(['options' => [
     'enctype' => 'multipart/form-data',
     'testId' => $testId,
 ]]); ?>
 
-    <a class="" href="<?= Url::toRoute(['test/index']) ?>">Выйти</a>
+    <a id="add" href="<?= Url::toRoute(['test/index']) ?>">Выйти</a>
 
 <?= $questionAdd->field($newQuestion, 'question')->textarea() ?>
 <?= $questionAdd->field($newQuestion, 'answer')->textarea() ?>

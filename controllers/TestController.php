@@ -6,6 +6,7 @@ namespace app\controllers;
 
 use app\classes\AdminDb;
 use app\models\Question;
+use app\models\Test;
 use yii\web\Controller;
 use app\classes\ContentGenerator;
 
@@ -53,6 +54,7 @@ class TestController extends Controller
             ContentGenerator::testStart($testId);
             $question = ContentGenerator::getSelectQuestion($testId);
         }
+
         return $this->renderPartial('_test', [
             'question' => $question,
         ]);
@@ -101,9 +103,8 @@ class TestController extends Controller
     public function actionQuestionAdd($testId)
     {
         $this->layout = 'test-add';
-
+        $test = Test::findOne($testId);
         $newQuestion = new Question();
-
 
         if ($newQuestion->load(\Yii::$app->request->post()) && $newQuestion->validate()) {
             AdminDb::questionSave($newQuestion, $testId);
@@ -111,6 +112,7 @@ class TestController extends Controller
 
         return $this->render('question-add', [
             'testId' => $testId,
+            'test' => $test,
             'newQuestion' => $newQuestion,
         ]);
     }

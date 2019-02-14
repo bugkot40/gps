@@ -35,6 +35,7 @@ class Question extends \yii\db\ActiveRecord
         return [
             [['test_id', 'use'], 'integer'],
             [['question', 'answer'], 'string'],
+            [['question', 'answer'], 'required'],
             [['link'], 'string', 'max' => 255],
             [['image'], 'file'],
             [['test_id'], 'exist', 'skipOnError' => true, 'targetClass' => Test::className(), 'targetAttribute' => ['test_id' => 'id']],

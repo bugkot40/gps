@@ -55,6 +55,7 @@ class ContentGenerator
             'test_id' => $testId,
             'use' => 0,
         ])->orderBy('id')->one();
+
         if ($procedureQuestion) {
             $procedureQuestion->use = 1;
             $procedureQuestion->save();
