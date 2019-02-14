@@ -9,6 +9,11 @@ a {
 
 a:hover{
     background-color:rgb(2, 255, 0);
+	text-decoration: none;
+}
+
+a:visited{	
+	text-decoration: none;
 }
 
 a.get{
@@ -18,7 +23,7 @@ a.get{
     z-index: 100;
 }
 a.get:hover{
-    background-color: red;
+    background-color: rgb(2, 255, 0);    
 }
 
 li.js_start{
@@ -34,4 +39,29 @@ div .content{
     position: absolute;
     right: 20px;
     top: 0px;
+}
+
+#link{
+	float: right;
+	margin-right: 100px;
+}
+#question{
+	margin-top: 20px;
+	padding: 10px;
+	background: #0d3349;
+	color: white;
+	border-radius: 5px;
+}
+#answer{
+	margin-top: 30px;
+	padding: 10px;
+	color: #0d3349;
+	background-color: white;
+	border-radius: 5px;
+}
+
+h1{
+	color: #0d3349;
+	font-wegth: bold;
+	font-style: italic;
 }
