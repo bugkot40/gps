@@ -13,13 +13,13 @@ use yii\helpers\Url;
         Продолжить
     </a>
     <div id="link">
-        <?= '[' . $question->link . ']' ?>
+        <?= '[ ' . $question->link . ' ]' ?>
     </div>
     <div id="question">
         <?= $question->question ?>
     </div>
-    <div id="vis"></div>
-    <div id="vis_answer">
+    <div id="vis" class="vis_close"></div>
+    <div id="answer" class="vis_answer">
         <?= $question->answer ?>
     </div>
 <?php else: ?>

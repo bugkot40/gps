@@ -16,6 +16,10 @@ a:visited {
     text-decoration: none;
 }
 
+a.next:hover {
+    background: rgb(150, 255, 88);
+}
+
 a.get {
     position: absolute;
     right: 20px;
@@ -43,29 +47,52 @@ div .content {
 }
 
 #link {
-    float: right;
+    margin-top: 20px;
     margin-right: 100px;
     color: #b7b7b7;
 }
-p{
-    color: #b7b7b7;
+
+p {
+    color: rgb(150, 255, 88);
+    font-style: italic;
 }
+
+textarea#question-answer {
+    height: 250px;
+}
+
+textarea#question-question {
+    height: 100px;
+}
+
+#question-link {
+    height: 50px;
+    background: #6f6d6d;
+    color: white;
+}
+
 #question {
-    margin-top: 20px;
+    margin-top: 5px;
     padding: 10px;
     background: #0d3349;
     color: white;
     border-radius: 5px;
 }
 
-#vis{
+#vis {
     margin-top: 30px;
     width: 25px;
     height: 17px;
-    background: url("../images/close.jpg") no-repeat;
     background-size: contain;
 }
 
+.vis_close {
+    background: url("../images/close.jpg") no-repeat;
+}
+
+.vis_open {
+    background: url("../images/open.jpg") no-repeat;
+}
 
 #answer {
     padding: 10px;
@@ -74,30 +101,41 @@ p{
     border-radius: 0 5px 5px 5px;
 }
 
-#vis_answer{
+.procedure{
+    margin-top: 30px;
+}
+
+.vis_answer {
     display: none;
 }
+
 h1 {
-    color: #0d3349;
+    color: #96ff58;
     font-style: italic;
 }
 
-a.next{
+a.next {
     font-style: italic;
+    font-weight: 900;
+    background: #e6ffd0;
+    border-radius: 5px;
+    padding: 2px;
 }
 
-a#add{
+a#add {
     float: right;
     font-weight: 900;
 }
 
-form#w0{
+form#w0 {
     margin-top: 20px;
 }
-.control-label{
+
+.control-label {
     color: white;
 }
-textarea#question-question{
+
+textarea#question-question {
     background-color: black;
     color: white;
 }

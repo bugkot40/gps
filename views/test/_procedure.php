@@ -11,12 +11,12 @@ use yii\helpers\Url;
         Продолжить
     </a>
     <div id="link">
-        <?= '[' . $question->link . ']' ?>
+        <?= '[ ' . $question->link . ' ]' ?>
     </div>
     <div id="question">
         <?= $question->question ?>
     </div>
-    <div id="answer">
+    <div id="answer" class="procedure">
         <?= $question->answer ?>
     </div>
 <?php else: ?>

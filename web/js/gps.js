@@ -19,4 +19,16 @@ $("document").ready(function () {
         });
         return false; //лучше так отключать дефолтное поведение html элементов
     });
+
+    $('.js_start').on('click', '.vis_close', function () {
+        $(this).toggleClass("vis_close vis_open");
+        $('.vis_answer').css('display', 'block');
+    });
+
+    $('.js_start').on('click', '.vis_open', function () {
+        $(this).toggleClass("vis_open vis_close");
+        $('.vis_answer').css('display', 'none');
+    });
+
 });
+
