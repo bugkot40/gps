@@ -21,6 +21,12 @@ use yii\helpers\Html;
     <div id="answer" class="vis_answer">
         <?= $question->answer ?>
     </div>
-<?php else: ?>
+	<?php if ($question->image) : ?>
+		<div id="image">
+			<?php $url = '@web/images/questions/'.$question->image ?>
+			<?= Html::img($url, ['alt' => 'image', 'width' => '90%']) ?>
+		</div>
+		<?php endif; ?>
+	<?php else: ?>
     <h2>Вопросы кончились</h2>
 <?php endif; ?>

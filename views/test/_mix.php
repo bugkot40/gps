@@ -1,5 +1,6 @@
 <?php
 use yii\helpers\Url;
+use yii\helpers\Html;
 
 ?>
 
@@ -22,6 +23,13 @@ use yii\helpers\Url;
     <div id="answer" class="vis_answer">
         <?= $question->answer ?>
     </div>
+	<?php if ($question->image) : ?>
+		<div id="image">
+			<?php $url = '@web/images/questions/'.$question->image ?>
+			<?= Html::img($url, ['alt' => 'image', 'width' => '90%', 'position' => 'center-center']) ?>
+		</div>
+		<?php endif; ?>
+	<?php else: ?>
 <?php else: ?>
     <h2>Вопросы кончились</h2>
 <?php endif; ?>

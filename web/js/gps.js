@@ -23,11 +23,13 @@ $("document").ready(function () {
     $('.js_start').on('click', '.vis_close', function () {
         $(this).toggleClass("vis_close vis_open");
         $('.vis_answer').css('display', 'block');
+		$('#image').css('display', 'block');
     });
 
     $('.js_start').on('click', '.vis_open', function () {
         $(this).toggleClass("vis_open vis_close");
         $('.vis_answer').css('display', 'none');
+		$('#image').css('display', 'none');
     });
 
 });

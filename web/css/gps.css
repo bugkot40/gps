@@ -58,7 +58,7 @@ p {
 }
 
 textarea#question-answer {
-    height: 250px;
+    height: 200px;
 }
 
 textarea#question-question {
@@ -138,5 +138,15 @@ form#w0 {
 textarea#question-question {
     background-color: black;
     color: white;
+}
+
+#image_procedure{
+	display: block;
+	margin-top: 20px;	
+}
+
+#image{
+	display: none;
+	margin-top: 20px;	
 }
 
