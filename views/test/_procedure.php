@@ -15,10 +15,10 @@ use yii\helpers\Html;
     <div id="link">
         <?= '[ ' . $question->link . ' ]' ?>
     </div>
-    <div id="question">
+    <div class="question">
         <?= $question->question ?>
     </div>
-    <div id="answer" class="procedure">
+    <div class="answer" class="procedure">
         <?= $question->answer ?>
     </div>
 

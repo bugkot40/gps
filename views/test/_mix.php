@@ -16,11 +16,11 @@ use yii\helpers\Html;
     <div id="link">
         <?= '[ ' . $question->link . ' ]' ?>
     </div>
-    <div id="question">
+    <div class="question">
         <?= $question->question ?>
     </div>
     <div id="vis" class="vis_close"></div>
-    <div id="answer" class="vis_answer">
+    <div class="answer vis_answer">
         <?= $question->answer ?>
     </div>
     <?php if ($question->image) : ?>
