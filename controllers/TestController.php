@@ -72,6 +72,18 @@ class TestController extends Controller
         ]);
     }
 
+//	public function actionLink($linkId = null)
+//	{
+//		if (\Yii::$app->request->isAjax) {
+//            $linkId = \Yii::$app->request->get();
+//        }
+//        if ($linkId) $link = Link::findOne($linkId);
+//		else $link = 
+//        return $this->renderPartial('_link', [
+//            'link' => $link,
+//        ]);
+//	}
+	
     public function actionMix($mixId = null)
     {
         if (\Yii::$app->request->isAjax) {
