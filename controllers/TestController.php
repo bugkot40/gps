@@ -15,8 +15,12 @@ class TestController extends Controller
     public $layout = 'test';
 
     public function actionIndex()
-    {
-        return $this->render('index');
+    {	
+		$list = ContentGenerator::getList();		
+		
+        return $this->render('index',[
+			'list' => $list 
+		]);
     }
 
     public function actionProcedure($testId = null)
@@ -24,12 +28,12 @@ class TestController extends Controller
         if (\Yii::$app->request->isAjax) {
             $testId = \Yii::$app->request->get();
         }
-        if ($testId) {
+        if ($testId) {			
             ContentGenerator::testStart($testId);
             $question = ContentGenerator::getProcedureQuestion($testId);
         }
         return $this->renderPartial('_procedure', [
-            'question' => $question,
+            'question' => $question,			
         ]);
     }
 

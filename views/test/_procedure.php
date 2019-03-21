@@ -4,7 +4,6 @@ use yii\helpers\Html;
 
 
 ?>
-
 <?php if ($question): ?>
     <h1>Обучение <?= $question->test->label ?></h1>
     <p><?= $question->test->name?></p>

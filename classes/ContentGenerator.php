@@ -10,6 +10,7 @@ use Yii;
 
 class ContentGenerator
 {
+		
     /**
      * Generation of objects in the menu section
      * @return mixed
@@ -20,6 +21,21 @@ class ContentGenerator
         $menu['test'] = Test::find()->asArray()->all();
         return $menu;
     }
+	
+	public static function getList()
+	{
+		$tests = Test::find()->asArray()->all();		
+		foreach($tests as $test){			
+			$questions = Question::find()->asArray()->all();
+			foreach($questions as $question){
+				if($question['test_id']==$test['id']){
+					$list[$test['name']][$question['id']] = $question['link'];				
+				}
+			}	
+		}	
+		
+		return $list;
+	}
 
     public static function testStart($testId)
     {
