@@ -7,7 +7,7 @@ a {
     color: #0d3349;
 }
 
-a:hover {
+a:hover{
     background-color: rgb(2, 255, 0);
     text-decoration: none;
 }
@@ -22,7 +22,7 @@ a.next:hover {
 
 a.get {
     position: absolute;
-    right: 20px;
+    right: 40px;
     top: 10px;
     z-index: 100;
 }
@@ -80,7 +80,7 @@ textarea#question-question {
     border-radius: 5px;
 }
 
-.question-mouseenter{
+.question-mouseenter {
     padding: 10px;
     background: #0d3349;
     color: white;
@@ -111,7 +111,7 @@ textarea#question-question {
     border-radius: 0 5px 5px 5px;
 }
 
-.answer-mouseenter{
+.answer-mouseenter {
     padding: 10px;
     color: #0d3349;
     background-color: white;
@@ -120,7 +120,7 @@ textarea#question-question {
     font-size: 1.5em;
 }
 
-.procedure{
+.procedure {
     margin-top: 30px;
 }
 
@@ -154,7 +154,7 @@ form#w0 {
     color: white;
 }
 
-textarea{
+textarea {
     font-size: 2em;
 }
 
@@ -168,16 +168,44 @@ textarea#question-answer, #question-link {
     font-size: 1.2em;
 }
 
-#image_procedure{
-	display: block;
-	margin-top: 20px;	
+#image_procedure {
+    display: block;
+    margin-top: 20px;
 }
 
-#image{
-	display: none;
-	margin-top: 20px;	
+#image {
+    display: none;
+    margin-top: 20px;
 }
 
-div.question{
-	display: none;
+.archive {
+    padding-left: 3px;
+    padding-right: 3px;
+    float: right;
+    margin-right: 5px;
 }
+
+.archive:hover{
+    cursor: help;
+    background-color: rgb(2, 255, 0);
+    text-decoration: none;
+}
+div.question {
+    display: none;
+}
+
+#close{
+    padding-top: 5px;
+    padding-right: 10px;
+    float: right;
+    visibility: hidden;
+}
+
+#close:hover{
+    cursor: pointer;
+}
+#close img{
+    border-radius: 20px;
+}
+
+
