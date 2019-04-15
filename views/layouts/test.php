@@ -54,10 +54,14 @@ ltAppAsset::register($this);
                     <?= Html::img("@web/images/archive.png", ['alt' => '?', 'width' => '20px']) ?>
                 </div>
             </li>
-            <div class='question'>
+            <div class='archiveQuestion'>
                 <?php foreach ($test['questions'] as $key => $question): ?>
                     <p class='question'>Вопрос <?= $key + 1 ?>. <?= $question['question'] ?> </p>
                     <p class='answer'> <?= $question['answer'] ?></p>
+                    <?php if ($question['image']): ?>
+                        <?php $img = $question['image']; ?>
+                        <?= Html::img("@web/images/questions/$img", ['alt' => 'images', 'width' => '500px']) ?>
+                    <?php endif; ?>
                 <?php endforeach; ?>
             </div>
             <?php $list = NULL ?>

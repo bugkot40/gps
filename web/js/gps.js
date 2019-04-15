@@ -55,7 +55,7 @@ $("document").ready(function () {
     });
 
     $('#close').on('click', function () {
-        $('div.question').css('display', 'none');
+        $('div.archiveQuestion').css('display', 'none');
         $('.js_start').css('display', 'block');
         $(this).css('visibility', 'hidden');
     } )

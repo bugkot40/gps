@@ -71,7 +71,7 @@ textarea#question-question {
     color: white;
 }
 
-.question {
+.question, div.archiveQuestion {
     margin-top: 5px;
     margin-bottom: 10px;
     padding: 10px;
@@ -190,14 +190,17 @@ textarea#question-answer, #question-link {
     background-color: rgb(2, 255, 0);
     text-decoration: none;
 }
-div.question {
+div.archiveQuestion {
+
     display: none;
 }
 
 #close{
     padding-top: 5px;
     padding-right: 10px;
-    float: right;
+    position: fixed;
+    top: 5px;
+    right: 0;
     visibility: hidden;
 }
 
