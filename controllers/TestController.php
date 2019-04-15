@@ -16,11 +16,7 @@ class TestController extends Controller
 
     public function actionIndex()
     {	
-		$list = ContentGenerator::getList();		
-		
-        return $this->render('index',[
-			'list' => $list 
-		]);
+		return $this->render('index');
     }
 
     public function actionProcedure($testId = null)

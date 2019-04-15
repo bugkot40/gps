@@ -34,7 +34,7 @@ a.get:hover {
 li.js_start {
     margin: 5px;
     background-color: rgba(255, 255, 255, 0.64);
-    width: 150px;
+    width: 170px;
     display: block;
     padding-left: 10px;
 }
@@ -178,3 +178,6 @@ textarea#question-answer, #question-link {
 	margin-top: 20px;	
 }
 
+div.question{
+	display: none;
+}

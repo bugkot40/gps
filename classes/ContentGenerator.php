@@ -16,28 +16,13 @@ class ContentGenerator
      * @return mixed
      */
     public static function getMenu()
-    {
+    {		
         $menu['ps'] = Ps::find()->asArray()->all();
-        $menu['test'] = Test::find()->asArray()->all();
+		$menu['test'] = Test::find()->asArray()->with('questions')->all();
         return $menu;
     }
 	
-	public static function getList()
-	{
-		$tests = Test::find()->asArray()->all();		
-		foreach($tests as $test){			
-			$questions = Question::find()->asArray()->all();
-			foreach($questions as $question){
-				if($question['test_id']==$test['id']){
-					$list[$test['name']][$question['id']] = $question['link'];				
-				}
-			}	
-		}	
-		
-		return $list;
-	}
-
-    public static function testStart($testId)
+	public static function testStart($testId)
     {
         $questions = Question::find()->where([
             'test_id' => $testId,

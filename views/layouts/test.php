@@ -27,14 +27,13 @@ ltAppAsset::register($this);
 <body>
 <?php $this->beginBody() ?>
 <?php $menu = \app\classes\ContentGenerator::getMenu(); ?>
-
+	
 <?php $pss = $menu['ps']; ?>
-<?php $tests = $menu['test']; ?>
-
+<?php $tests = $menu['test']; ?>	
 <div class="wrap">
     <ul>
-        <?php foreach ($tests as $test): ?>
-            <li class="js_start">
+        <?php foreach ($tests as $test): ?>		  
+		   <li class="js_start">
                 <a class="js_test" href="<?= Url::toRoute(['test/procedure', 'testId' => $test['id']]) ?>"
                    data-url='test/procedure' data-id="<?= $test['id'] ?>">
                     <?= $test['label'] ?>
@@ -49,7 +48,19 @@ ltAppAsset::register($this);
                     <?= Html::img("@web/images/add.png", ['alt' => '+', 'width' => '20px']) ?>
                 </a>
             </li>
+			<div class="archive"> 
+				<?= Html::img("@web/images/archive.png", ['alt' => '?', 'width' => '20px']) ?>
+				<div class='question'>
+					<?php foreach($test['questions'] as $key => $question): ?>
+						<p class='question'>Вопрос <?= $key+1 ?>. <?=$question['question']?> </p>
+						<p class='answer'> <?=$question['answer'] ?></p>									
+					<?php endforeach; ?>
+				</div>
+		    </div>		  
+			<?php $list =  NULL ?>
         <?php endforeach; ?>
+		
+	
         <li class="js_start">
             <a class="js_test" href="<?= Url::toRoute(['test/mix', 'mixId' => 1]) ?>"
                data-url='test/mix' data-id="<?= 1 ?>">
