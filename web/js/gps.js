@@ -58,7 +58,23 @@ $("document").ready(function () {
         $('div.archiveQuestion').css('display', 'none');
         $('.js_start').css('display', 'block');
         $(this).css('visibility', 'hidden');
-    } )
-
+    });
+	
+	$('.archiveQuestion img').on('mouseenter', function (){
+		var zoom = 600;
+		$(this).css ({'width': '600px', 'cursor': 'zoom-in'});
+		$(this).on('click', function(){
+			zoom = zoom + 100;
+			var width = zoom+'px';
+			$(this).css('width', width);
+		});
+	});
+	
+	$('.archiveQuestion img').on('mouseleave', function (){
+		$(this).css ('width', '500px');								 
+	});
+	
+	
+	
 });
 

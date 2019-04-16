@@ -191,8 +191,11 @@ textarea#question-answer, #question-link {
     text-decoration: none;
 }
 div.archiveQuestion {
-
     display: none;
+}
+
+(div.archiveQuestion img)::hover {
+	    cursor: pointer;	
 }
 
 #close{

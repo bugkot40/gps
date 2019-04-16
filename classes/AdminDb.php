@@ -47,7 +47,7 @@ class AdminDb
     private function imageOptimization($file)
     {
         $photo = Image::getImagine()->open($file);
-        $photo->thumbnail(new Box(700, 700))->save($file, ['quality' => 90]);
+//        $photo->thumbnail(new Box(3000, 3000))->save($file, ['quality' => 300]);
 //                $imagineObj = new Imagine();
 //                $imageObj = $imagineObj->open($file);
 //                $imageObj->resize($photo->getSize()->widen(100))->save($file);
