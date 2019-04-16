@@ -24,7 +24,7 @@ use yii\helpers\Html;
 	<?php if ($question->image) : ?>
 		<div id="image">
 			<?php $url = '@web/images/questions/'.$question->image ?>
-			<?= Html::img($url, ['alt' => 'image', 'width' => '90%']) ?>
+			<?= Html::img($url, ['alt' => 'image', 'width' => '50%', 'class' => 'img']) ?>
 		</div>
 		<?php endif; ?>
 	<?php else: ?>

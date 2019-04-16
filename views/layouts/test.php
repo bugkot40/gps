@@ -60,7 +60,7 @@ ltAppAsset::register($this);
                     <p class='answer'> <?= $question['answer'] ?></p>
                     <?php if ($question['image']): ?>
                         <?php $img = $question['image']; ?>
-                        <?= Html::img("@web/images/questions/$img", ['alt' => 'images', 'width' => '500px']) ?>
+                        <?= Html::img("@web/images/questions/$img", ['alt' => 'images', 'width' => '50%', 'class' => 'img']) ?>
                     <?php endif; ?>
                 <?php endforeach; ?>
             </div>

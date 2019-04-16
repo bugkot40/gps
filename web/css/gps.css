@@ -7,7 +7,7 @@ a {
     color: #0d3349;
 }
 
-a:hover{
+a:hover {
     background-color: rgb(2, 255, 0);
     text-decoration: none;
 }
@@ -185,20 +185,17 @@ textarea#question-answer, #question-link {
     margin-right: 5px;
 }
 
-.archive:hover{
+.archive:hover {
     cursor: help;
     background-color: rgb(2, 255, 0);
     text-decoration: none;
 }
+
 div.archiveQuestion {
     display: none;
 }
 
-(div.archiveQuestion img)::hover {
-	    cursor: pointer;	
-}
-
-#close{
+#close {
     padding-top: 5px;
     padding-right: 10px;
     position: fixed;
@@ -207,10 +204,11 @@ div.archiveQuestion {
     visibility: hidden;
 }
 
-#close:hover{
+#close:hover {
     cursor: pointer;
 }
-#close img{
+
+#close img {
     border-radius: 20px;
 }
 

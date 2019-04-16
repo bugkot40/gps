@@ -50,8 +50,8 @@ $("document").ready(function () {
 
     $('.archive').on('click', function () {
         $('.js_start').css('display', 'none');
-       $(this).parent().next().css('display', 'block');
-       $('#close').css('visibility', 'visible')
+        $(this).parent().next().css('display', 'block');
+        $('#close').css('visibility', 'visible')
     });
 
     $('#close').on('click', function () {
@@ -59,22 +59,35 @@ $("document").ready(function () {
         $('.js_start').css('display', 'block');
         $(this).css('visibility', 'hidden');
     });
-	
-	$('.archiveQuestion img').on('mouseenter', function (){
-		var zoom = 600;
-		$(this).css ({'width': '600px', 'cursor': 'zoom-in'});
-		$(this).on('click', function(){
-			zoom = zoom + 100;
-			var width = zoom+'px';
-			$(this).css('width', width);
-		});
-	});
-	
-	$('.archiveQuestion img').on('mouseleave', function (){
-		$(this).css ('width', '500px');								 
-	});
-	
-	
-	
+
+    $('.img').on('mouseenter', function () {
+        var zoom = 50;
+        $(this).css('cursor', 'zoom-in');
+        $(this).on('click', function () {
+            zoom = zoom + 25;
+            var width = zoom + '%';
+            $(this).css('width', width);
+        });
+    });
+
+    $('.img').on('mouseleave', function () {
+        $(this).css('width', '50%');
+    });
+
+    $('.js_start').on('mouseenter', '.img', function () {
+        var zoom = 50;
+        $(this).css('cursor', 'zoom-in');
+        $(this).on('click', function () {
+            zoom = zoom + 25;
+            var width = zoom + '%';
+            $(this).css('width', width);
+        });
+    });
+
+    $('.js_start').on('mouseleave', '.img', function () {
+        $(this).css('width', '50%');
+    });
+
+
 });
 
