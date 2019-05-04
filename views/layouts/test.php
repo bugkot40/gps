@@ -36,23 +36,27 @@ ltAppAsset::register($this);
     </div>
     <ul>
         <?php foreach ($tests as $test): ?>
-            <li class="js_start">
-                <a class="js_test" href="<?= Url::toRoute(['test/procedure', 'testId' => $test['id']]) ?>"
-                   data-url='test/procedure' data-id="<?= $test['id'] ?>">
-                    <?= $test['label'] ?>
-                </a>
+            <?php if ($test['mix_id'] == null): ?>
+                <li class="js_start base">
+            <?php else: ?>
+                <li class="js_start">
+            <?php endif; ?>
+            <a class="js_test" href="<?= Url::toRoute(['test/procedure', 'testId' => $test['id']]) ?>"
+               data-url='test/procedure' data-id="<?= $test['id'] ?>">
+                <?= $test['label'] ?>
+            </a>
 
-                <a class="js_test" href="<?= Url::toRoute(['test/test', 'testId' => $test['id']]) ?>"
-                   data-url='test/test' data-id="<?= $test['id'] ?>">
-                    <?= Html::img("@web/images/mix.png", ['alt' => 'mix', 'width' => '20px']) ?>
-                </a>
+            <a class="js_test" href="<?= Url::toRoute(['test/test', 'testId' => $test['id']]) ?>"
+               data-url='test/test' data-id="<?= $test['id'] ?>">
+                <?= Html::img("@web/images/mix.png", ['alt' => 'mix', 'width' => '20px']) ?>
+            </a>
 
-                <a class="menu" href="<?= Url::toRoute(['test/question-add', 'testId' => $test['id']]) ?>">
-                    <?= Html::img("@web/images/add.png", ['alt' => '+', 'width' => '20px']) ?>
-                </a>
-                <div class="archive">
-                    <?= Html::img("@web/images/archive.png", ['alt' => '?', 'width' => '20px']) ?>
-                </div>
+            <a class="menu" href="<?= Url::toRoute(['test/question-add', 'testId' => $test['id']]) ?>">
+                <?= Html::img("@web/images/add.png", ['alt' => '+', 'width' => '20px']) ?>
+            </a>
+            <div class="archive">
+                <?= Html::img("@web/images/archive.png", ['alt' => '?', 'width' => '20px']) ?>
+            </div>
             </li>
             <div class='archiveQuestion'>
                 <?php foreach ($test['questions'] as $key => $question): ?>
